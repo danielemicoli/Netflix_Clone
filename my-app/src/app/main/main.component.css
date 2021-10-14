@@ -1,0 +1,9 @@
+
+mat-slider {
+  width: 300px;
+}
+#movie-carousel{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}

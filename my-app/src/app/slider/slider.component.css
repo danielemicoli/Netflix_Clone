@@ -1,0 +1,19 @@
+.thumbnails .carousel{
+    display: flex;
+    width: 100%;
+}
+.thumbnails .carousel div{
+    flex-wrap: nowrap;
+}
+.slick-item{
+    transition:all 0.3s ease;
+}
+.slick-item:hover{
+transform: scale(1.02);
+cursor: pointer;
+}
+.slick-next{
+    right: 20px;
+    z-index: 999;
+
+}

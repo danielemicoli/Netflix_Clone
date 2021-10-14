@@ -1,0 +1,44 @@
+
+.nav-main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand ul{
+    display: inline-block;
+
+}
+.brand ul li{
+    display: inline-block;
+    margin-right: 0.6em;
+  
+}
+.left ul li{
+    display: inline-block;
+}
+.right ul li{
+    display: inline-block;
+    margin-right: 0.7em;
+    
+}
+.brand img{
+    height: 1.4rem;
+    margin: 1em;    
+}
+.right, .brand ul{
+    display: none;
+}
+.right{
+    margin: 0.8rem;
+}
+
+
+@media screen and (min-width: 700px) {
+    .right, .brand ul{
+        display:inline-block
+    }    
+    .center{
+        display: none;
+    }    
+    
+  }
