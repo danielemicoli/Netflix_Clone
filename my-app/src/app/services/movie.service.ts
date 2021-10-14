@@ -56,13 +56,13 @@ URL = 'https://api.themoviedb.org/3'
   //     )};
 
 
-  getLatestMovie(): Observable<Movies> {
-    return this.http.get<Movies>(`${this.URL}${endpoint.latest}`, {
-      params: {
-        api_key: this.api_key
-      }
-    });
-  }
+  // getLatestMovie(): Observable<Movies> {
+  //   return this.http.get<Movies>(`${this.URL}${endpoint.latest}`, {
+  //     params: {
+  //       api_key: this.api_key
+  //     }
+  //   });
+  // }
 
   getNowPlaying(): Observable<Movies> {
     return this.http.get<Movies>(`${this.URL}${endpoint.now_playing}`, {
@@ -80,13 +80,13 @@ URL = 'https://api.themoviedb.org/3'
     });
   }
 
-  getPopularMovies(): Observable<Movies> {
-    return this.http.get<Movies>(`${this.URL}${endpoint.popular}`, {
-      params: {
-        api_key: this.api_key
-      }
-    });
-  }
+  // getPopularMovies(): Observable<Movies> {
+  //   return this.http.get<Movies>(`${this.URL}${endpoint.popular}`, {
+  //     params: {
+  //       api_key: this.api_key
+  //     }
+  //   });
+  // }
 
   getTopRated(): Observable<Movies> {
     return this.http.get<Movies>(`${this.URL}${endpoint.top_rated}`, {
@@ -98,6 +98,13 @@ URL = 'https://api.themoviedb.org/3'
 
   getTrending(): Observable<Movies> {
     return this.http.get<Movies>(`${this.URL}${endpoint.trending}`, {
+      params: {
+        api_key: this.api_key
+      }
+    });
+  }
+  getPopular(): Observable<Movies> {
+    return this.http.get<Movies>(`${this.URL}${endpoint.popular}`, {
       params: {
         api_key: this.api_key
       }

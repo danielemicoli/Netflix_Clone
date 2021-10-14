@@ -13,7 +13,7 @@ export class SliderComponent implements OnInit {
   @Input() movies:any;
   @Input() title:any;
 
-  trending:any;
+  // trending:any;
 
   constructor(private movie:MovieService) { }
 

@@ -2,16 +2,41 @@
 .nav-main{
     display: flex;
     justify-content: space-between;
+    /* width: 100%; */
 }
 
 .brand ul{
     display: inline-block;
 
 }
+.sticky {
+    background-color: #0D0D0D;
+    z-index: 100;
+  }
+.nav{
+    top: 0;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+  }
 .brand ul li{
     display: inline-block;
     margin-right: 0.6em;
-  
+    color: white;
+}
+.right ul li a{
+    color: #c6c4c4;
+}
+.brand ul li a{
+color: white;
+width: fit-content;
+text-decoration: none;
+cursor: pointer;
+color: #c6c4c4;
+font-size: 14px;
+font-weight: 500;
+font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+transition: all 0.2s ease;
 }
 .left ul li{
     display: inline-block;
@@ -21,6 +46,7 @@
     margin-right: 0.7em;
     
 }
+
 .brand img{
     height: 1.4rem;
     margin: 1em;    
@@ -31,14 +57,29 @@
 .right{
     margin: 0.8rem;
 }
+.header__main {
+    display: flex;
+    padding: 20px;
+    width:100%;
+    justify-content: space-between;
+    z-index: 10;
+    position: fixed;
+    top:0;
+    transition: all 0.3s;
+    transition-timing-function: ease-in;
 
+
+  }
 
 @media screen and (min-width: 700px) {
     .right, .brand ul{
-        display:inline-block
+        display:inline-block;
+        color: white;
+        
     }    
     .center{
         display: none;
+        color: white;
     }    
     
   }

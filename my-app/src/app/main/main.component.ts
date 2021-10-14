@@ -58,11 +58,17 @@ export class MainComponent implements OnInit, OnDestroy {
       settings: {
       slidesToShow: 1
       }
-      }
+      },
+      {
+        breakpoint: 200,
+        settings: {
+        slidesToShow: 1
+        }
+        }
       ]
   }
-  @ViewChild('slickModal') header: ElementRef | undefined;
-
+  @ViewChild('stickHeader')
+  header!: ElementRef;
   headerBGUrl: any;
   movieVideo:any;
   popularMovie:any;
@@ -70,32 +76,34 @@ export class MainComponent implements OnInit, OnDestroy {
   constructor(private movie:MovieService) { }
 
   ngOnInit(): void {
-    // this.subs.push(this.movie.getTrending().subscribe(data => this.trending =data));
-    // this.headerBGUrl = 'https://image.tmdb.org/t/p/original'+this.trending.results.backdrop_path;
-    // this.subs.push(this.movie.getPopularMovie().subscribe(data => this.popular =data));
-    // this.subs.push(this.movie.getTopRated().subscribe(data => this.topRated =data));
-    // this.subs.push(this.movie.getNowPlaying().subscribe(data => this.nowPlaying =data));
-    // this.subs.push(this.movie.getOriginals().subscribe(data => this.originals =data))
-
-
-    // this.movie.getPopularMovie().subscribe( resp => this.popularMovie = resp)
     this.subs.push(this.movie.getTrending().subscribe(data => {
       this.trending = data;
-      this.headerBGUrl = 'https://image.tmdb.org/t/p/original' + this.trending.results[0].backdrop_path;
+      this.headerBGUrl = 'https://image.tmdb.org/t/p/original' + this.trending.results[1].backdrop_path;
     }));
-    this.subs.push(this.movie.getPopularMovies().subscribe(data => this.popular = data));
+    this.subs.push(this.movie.getPopular().subscribe(data => this.popular = data));
     this.subs.push(this.movie.getTopRated().subscribe(data => this.topRated = data));
     this.subs.push(this.movie.getOriginals().subscribe(data => this.originals = data));
     this.subs.push(this.movie.getNowPlaying().subscribe(data => this.nowPlaying = data));
+
   }
   ngOnDestroy(): void {
     this.subs.map(s => s.unsubscribe())
   }
+  @HostListener('window:scroll', ['$event'])
+  // tslint:disable-next-line:typedef
+  handleScroll() {
+    const windowScroll = window.pageYOffset;
 
-    getVideoTr(item:number){
-    this.movieVideo.getPosterVideo(item).subscribe((resp:any) =>{
-      this.movieVideo = resp;
+    if (windowScroll >= this.header.nativeElement.offsetHeight) {
+      this.sticky = true;
+    } else {
+      this.sticky = false;
+    }
   }
+  //   getVideoTr(item:number){
+  //   this.movieVideo.getPosterVideo(item).subscribe((resp:any) =>{
+  //     this.movieVideo = resp;
+  // }
 
-)
-}}
+
+}

@@ -1,3 +1,7 @@
+body{
+    margin-top: 20em;
+}
+
 .thumbnails .carousel{
     display: flex;
     width: 100%;
@@ -8,12 +12,47 @@
 .slick-item{
     transition:all 0.3s ease;
 }
+#trending{
+    margin-top: 10em;
+}
 .slick-item:hover{
-transform: scale(1.02);
-cursor: pointer;
+    transform: scale(1.04);
+    cursor: pointer;
+}
+h2 {
+    width: 300px;
+    padding: 0;
+    color: antiquewhite;
+    font-size: 25px;
 }
 .slick-next{
     right: 20px;
     z-index: 999;
+    background-color: black;
+    border: 2px solid black;
+    padding: 2em;
+    font-size: 30px;
 
+}
+.slick-next:before{
+    background-color: black;
+    border: 2px solid black;
+    padding: 2em;
+    font-size: 50px;
+}
+.slick-next .slick-arrow::before{
+    background-color: black;
+    border: 2px solid black;
+    padding: 2em;
+    font-size: 50px;
+}
+img {
+    border-radius: 7px;
+  }
+.movie {
+    margin: 20px 0;
+  }  
+div.thumbnails .carousel {
+    width:100%;
+    display: flex;
 }

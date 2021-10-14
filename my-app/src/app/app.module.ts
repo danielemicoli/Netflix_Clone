@@ -14,6 +14,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HttpClientModule } from '@angular/common/http';
 import {MatBadgeModule} from '@angular/material/badge';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     CarouselModule,
     HttpClientModule,
     MatBadgeModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

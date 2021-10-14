@@ -1,5 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs'
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
