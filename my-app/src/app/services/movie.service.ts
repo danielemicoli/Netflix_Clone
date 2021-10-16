@@ -110,7 +110,9 @@ URL = 'https://api.themoviedb.org/3'
       }
     });
   }
-
+  getMovieInfo(id:number){
+    return this.http.get<any>(environment.urlAPI+'movie/'+id+'?api_key='+this.api_key+'&language=en-US')
+  }
   }
   
   

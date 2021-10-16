@@ -1,6 +1,7 @@
 import { AfterViewInit, HostListener, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MovieService } from '../services/movie.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -10,7 +11,7 @@ import { Subscription } from 'rxjs';
 export class MainComponent implements OnInit, OnDestroy {
   sticky = false;
   subs: Subscription[] = [];
-  
+  infomovie:any;
   trending:any;
   popular:any;
   topRated:any;
@@ -73,7 +74,8 @@ export class MainComponent implements OnInit, OnDestroy {
   movieVideo:any;
   popularMovie:any;
   
-  constructor(private movie:MovieService) { }
+  constructor(private movie:MovieService,
+    private router:Router) { }
 
   ngOnInit(): void {
     this.subs.push(this.movie.getTrending().subscribe(data => {
@@ -105,5 +107,9 @@ export class MainComponent implements OnInit, OnDestroy {
   //     this.movieVideo = resp;
   // }
 
-
+  infoMovie(item:any){
+    this.movie.getMovieInfo(item.id).subscribe(resp => this.infomovie
+      = resp)
+      this.router.navigate(['home', item.id,'info'])
+  }
 }

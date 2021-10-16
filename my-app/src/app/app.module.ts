@@ -15,13 +15,15 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatBadgeModule} from '@angular/material/badge';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import {MatButtonModule} from '@angular/material/button';
+import { MovieInfoComponent } from './movie-info/movie-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MainComponent,
-    SliderComponent
+    SliderComponent,
+    MovieInfoComponent
   ],
   imports: [
     BrowserModule,
