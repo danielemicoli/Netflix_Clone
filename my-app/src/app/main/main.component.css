@@ -24,10 +24,14 @@ app-navbar{
 img {
   border-radius: 5px;
 }
+.play-button{
+  margin-left: 50px;
+}
 .play-button a{
   text-decoration: none;
   color: black;
 }
+
 .header__banner{
   background-position: top center;
   background-size: cover;
@@ -40,10 +44,13 @@ img {
   flex-direction: column;
   justify-content: center;
   box-shadow: 0px 18px 18px 2px #000000;
-
+  background-image: linear-gradient(
+    180deg,transparent,rgba(37,37,37,.61),#111);
 }
 .more-button {
   background-color: rgba(169, 170, 165, 0.7);
+  margin-left: 30px;
+
 }
 .header__banner img{
   box-shadow: 0px 18px 18px 2px #000000;
@@ -73,7 +80,7 @@ mat-slider {
 h2{
   font-size: 6rem;
   margin-left: 3rem;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
   margin-top: 8rem;
   color: lightgray;
 }
@@ -82,11 +89,10 @@ button {
   gap: 10px;
   align-items: center;
   font-size: 20px;
-  padding: 12px 30px; 
+  padding: 10px 22px; 
   border-radius: 5px;
   outline: none;
   border: none;
-  margin-left: 50px;
   margin-top: 1em;
   cursor: pointer;
   display: inline;
@@ -105,4 +111,15 @@ span {
 }
 mat-icon {
   transform: scale(1.2);
+}
+.wrapper {
+  max-width: 400px;
+  margin-left: 3em;
+  color: white;
+}
+.wrapper p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }

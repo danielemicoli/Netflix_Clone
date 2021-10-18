@@ -9,10 +9,16 @@ import { Subscription } from 'rxjs'
 export class NavbarComponent implements OnInit {
 
 // @ViewChild('stickHeader') header: ElementRef
+isScrolled = false;
+
+@HostListener("window:scroll")
+scrollEvent() {
+  this.isScrolled = window.pageYOffset >= 80}
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

@@ -1,6 +1,4 @@
-body{
-    margin-top: 20em;
-}
+
 
 .thumbnails .carousel{
     display: flex;
@@ -47,7 +45,9 @@ h2 {
     font-size: 50px;
 }
 img {
-    border-radius: 7px;
+    /* border-radius: 7px; */
+    width: 250px;
+    max-height: 180px;
   }
 .movie {
     margin: 20px 0;
@@ -56,3 +56,33 @@ div.thumbnails .carousel {
     width:100%;
     display: flex;
 }
+.banner{
+    color: #fff;
+    /* object-fit: contain; */
+    height: 50vh;
+    /* background-position: top center; */
+}
+.banner-title{
+    margin-left: 3em;
+    padding-top: 140px;
+    height: 190px;
+}
+.banner-title h1{
+    font-size: 4rem;
+    padding-bottom:.3rem;
+    font-weight: 800;
+    margin-left: 0.6em;
+}
+ngx-slick-carousel{
+    padding: 20px;
+}
+.content{
+    max-width: 400px;
+    margin-left: 3em;
+}
+.content p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }

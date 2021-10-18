@@ -81,5 +81,8 @@ transition: all 0.2s ease;
         display: none;
         color: white;
     }    
-    
+    .navbar-inverse {
+        background-color: #0a0a0a;
+        transition: 0.6s;
+    }
   }

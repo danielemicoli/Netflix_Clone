@@ -13,9 +13,11 @@ export class MainComponent implements OnInit, OnDestroy {
   subs: Subscription[] = [];
   infomovie:any;
   trending:any;
+  latest:any;
   popular:any;
   topRated:any;
   originals:any;
+  upcoming:any;
   nowPlaying:any;
   movies:any;
   sliderConfig = {
@@ -27,25 +29,25 @@ export class MainComponent implements OnInit, OnDestroy {
       {
         breakpoint: 1350,
         settings: {
-        slidesToShow: 6
+        slidesToShow: 5
         }
         },
       {
         breakpoint: 1200,
         settings: {
-        slidesToShow: 5
+        slidesToShow: 4
         }
         },
       {
         breakpoint: 1000,
         settings: {
-        slidesToShow: 4
+        slidesToShow: 3
         }
         },
       {
         breakpoint: 800,
         settings: {
-        slidesToShow: 3
+        slidesToShow: 2
         }
         },
       {
@@ -84,10 +86,11 @@ export class MainComponent implements OnInit, OnDestroy {
     }));
     this.subs.push(this.movie.getPopular().subscribe(data => this.popular = data));
     this.subs.push(this.movie.getTopRated().subscribe(data => this.topRated = data));
-    this.subs.push(this.movie.getOriginals().subscribe(data => this.originals = data));
     this.subs.push(this.movie.getNowPlaying().subscribe(data => this.nowPlaying = data));
+    this.subs.push(this.movie.getLatest().subscribe(data => this.latest = data));
 
   }
+
   ngOnDestroy(): void {
     this.subs.map(s => s.unsubscribe())
   }

@@ -15,7 +15,8 @@ export class SliderComponent implements OnInit {
   @Input() title:any;
   infomovie:any;
   // trending:any;
-
+  getinfo:boolean = true
+  visible:boolean = false;
   constructor(private movie:MovieService,
     private router:Router) { }
 
@@ -24,9 +25,16 @@ export class SliderComponent implements OnInit {
     // this.movie.getTrending().subscribe(data => this.trending =data);
 
   }
-  infoMovie(item:any){
-    this.movie.getMovieInfo(item.id)
-    .subscribe(resp => this.infomovie = resp)
-      this.router.navigate(['home', item.id,'info'])
+  // infoMovie(item:any){
+  //   this.movie.getMovieInfo(item.id)
+  //   .subscribe(resp => this.infomovie = resp)
+  //     // this.router.navigate(['home', item.id,'info'])
+  
+  onclick(item:any){
+    this.getinfo = !this.getinfo;
+    this.visible = !this.visible
+    {
+      this.movie.getMovieInfo(item.id)
+      .subscribe(resp => this.infomovie = resp)
   }
-}
+}}

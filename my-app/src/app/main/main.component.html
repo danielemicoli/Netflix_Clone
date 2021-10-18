@@ -3,9 +3,14 @@
       <!--BANNER AREA-->
       <div class="header__banner"
          [ngStyle]="{
-      'background-image' : 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('+headerBGUrl+')'
+      'background-image' : 'linear-gradient(
+180deg,transparent,rgba(37,37,37,.61),#111), url('+headerBGUrl+')'
       }">
+
       <h2>{{trending.results[1].title}}</h2>
+        <div class="wrapper">
+          <p>{{trending.results[1].overview}}</p>
+      </div>
       <div class="header__buttons">
  
         <button class="play-button"> <a href="https://www.netflix.com/browse">
@@ -26,11 +31,11 @@
 
 </div>
 <app-navbar></app-navbar>
-<div class="body" style="margin-top: 30rem;">
+<div class="body" style="margin-top: 45rem;">
     <app-slider id="trending" title="Trending" [movies]="trending" [sliderConfig]="sliderConfig"></app-slider>
     <app-slider title="Popular" [movies]="popular" [sliderConfig]="sliderConfig"></app-slider>
     <app-slider title="Top Rated" [movies]="topRated" [sliderConfig]="sliderConfig"></app-slider>
     <app-slider title="Now Playing" [movies]="nowPlaying" [sliderConfig]="sliderConfig"></app-slider>
-    <app-slider title="Originals" [movies]="originals" [sliderConfig]="sliderConfig"></app-slider>
+    <!-- <app-slider title="Latest" [movies]="latest" [sliderConfig]="sliderConfig"></app-slider> -->
   </div>
 <app-slider></app-slider>

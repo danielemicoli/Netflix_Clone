@@ -1,0 +1,98 @@
+img{
+    width: 100%;
+    /* height: 100vh; */
+}
+
+.img{
+    margin: auto;
+    text-align: center;
+    padding-bottom: 1em;
+    background-color: teal;
+    border-radius: 10px;
+    box-shadow: 5px 10px 8px rgb(35, 35, 35);
+    margin-top: 3em;
+    /* width: 100%; */
+    margin-bottom: 2em;
+} 
+#cast{
+    color: white;
+}
+#netflix{
+    text-align: center;
+    margin-top: 2em;
+    font-size: 18px;
+    color: white;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* justify-content: space-evenly; */
+    color: white;
+}
+/* .container{
+    flex: 20% 0 1
+} */
+
+
+#year{
+    font-weight: 300;
+    font-size: 35px;
+
+}
+#genres-title{
+    background-color: teal;
+    border-radius: 10%;
+    padding: 0.2em;
+    margin-top: 0.6em;
+}
+#title-movie{
+    font-size: 50px;
+    color: white;
+    font-weight: 700;
+    margin-top: 0.8em;
+}
+#genres{
+    font-size: 25px;
+    margin-bottom: 0.5em;
+}
+#rate{
+    background:rgb(206, 210, 255);
+    padding: 0.4em;
+    border-radius: 50%;
+    color: black;
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+#title{
+    margin-top: 0.8em;
+    margin-bottom: 1em;
+}
+#overview-title{
+    font-size: 20px;
+    margin-top: 4em;
+    background-color: teal;
+    margin-top: 0.6em;
+}
+#overview{
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+}
+img{
+    /* border-radius: 10px; */
+    box-shadow: 5px 10px 8px rgb(35, 35, 35);
+    /* width: 20em; */
+}
+p{
+    font-size: 20px;
+    background-color: teal;
+    padding: 0.2em;
+    margin-top: 0.6em;
+}
+#cast{
+    margin-top: 1em;
+}
+video{
+    height: 20vh;
+}
+

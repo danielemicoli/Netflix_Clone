@@ -1,1 +1,40 @@
-<p>movie-info works!</p>
+
+    <img src="https://image.tmdb.org/t/p/original{{movieInfo.backdrop_path}}" alt="">
+    <div class="container">
+
+    <!-- <div class="header__banner"
+    [ngStyle]="{
+    'background-image' : 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url('+headerBGUrl+')'
+    }"> -->
+
+    <!-- <img src="https://image.tmdb.org/t/p/original{{movieInfo.backdrop_path}}" alt=""> -->
+    <a href="https://www.netflix.com"><div id="netflix">Watch on Netflix</div></a>
+
+
+<div>
+    <div id="title-movie">{{movieInfo.original_title}} • <span id="year"><em>({{movieInfo.release_date[0]+movieInfo.release_date[1]+movieInfo.release_date[2]+movieInfo.release_date[3]}})</em></span></div> 
+    <!-- <div>{{movieInfo.budget}}</div>  -->
+
+    <div id="genres">Genres: <span id="genres-title">{{movieInfo.genres[0].name}}</span> • {{ movieInfo.runtime}}m</div> 
+    <div>Rate: <span id="rate">{{movieInfo.vote_average}}</span></div> 
+    <div id="title"><em>{{movieInfo.original_title}}</em>
+    <!-- <div>{{movieInfo.budget}}</div>  -->
+    <div id="overview-title">Overview</div>
+    <div id="overview"><em>{{movieInfo.overview}}</em></div>
+    
+    <!-- <div *ngIf="expression"></div> -->
+    <!-- <div id="overview" url=""{{movieInfo.id}}/credits</div> -->
+        <!-- <div *ngIf="movieCredit.job === 'Director'">{{movieCredit.cast}}</div> -->
+           <p>
+              Cast:
+            </p>
+        <span id="cast" *ngFor="let item of movieCredit.cast">
+            <span *ngIf='item.known_for_department == "Acting"'> {{item.name}}, </span>
+            <span *ngIf='item.job == "Director"'> {{item.name}}, </span>
+
+            <!-- <div> {{item.name}}</div> -->
+        </span>
+
+        <!-- <div>{{movieCredit.cast.name}}</div> -->
+</div>
+</div>

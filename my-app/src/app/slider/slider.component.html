@@ -16,11 +16,25 @@
       <div class="thumbnails">
         <ngx-slick-carousel [config]="sliderConfig" class="carousel">
           <div  class="slick-item" *ngFor="let item of movies.results" ngxSlickItem>
-            <a [routerLink]="" (click)="infoMovie(item)" >
-            <img src="https://image.tmdb.org/t/p/w200{{item?.poster_path}}" alt="{{item.title}}">
+            <a [routerLink]="" (click)="onclick(item)" >
+            <img src="https://image.tmdb.org/t/p/original/{{item?.backdrop_path}}" alt="{{item.title}}">
               </a>
           </div>
+         
         </ngx-slick-carousel>
+        <section *ngIf="visible" class="banner" style="background-size:cover; background-image:url('https://image.tmdb.org/t/p/original/{{infomovie.backdrop_path}}'); background-position: top center">
+          <div class="banner_top"></div>
+          <div class="banner-title">
+           <h1> {{infomovie.title}}
+          </h1>
+        <div class="content">
+          <p>{{infomovie.overview}}</p>
+        </div>
+           </div>
+          <div class="banner-bottom"></div>
+        </section>
       </div>
+
     </div>
+
   </div>
